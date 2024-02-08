@@ -80,5 +80,4 @@ class MeshFactory:
         nodes = np.array(meshpy_mesh.points)
         elements = np.array(meshpy_mesh.elements)
         neighbours = np.array(meshpy_mesh.neighbors)
-        faces = np.array(meshpy_mesh.faces)
         return nodes, elements, neighbours
