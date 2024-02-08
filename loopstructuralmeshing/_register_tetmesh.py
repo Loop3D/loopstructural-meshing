@@ -8,9 +8,7 @@ from . import MeshFactory
 
 
 class TetGenP1(UnStructuredTetMesh):
-    def __init__(
-        self, origin=np.zeros(3), nsteps=np.ones(3) * 10, step_vector=np.ones(3)
-    ):
+    def __init__(self, origin=np.zeros(3), nsteps=np.ones(3) * 10, step_vector=np.ones(3)):
         self.origin = origin
         self.nsteps = nsteps
         self.step_vector = step_vector
@@ -23,9 +21,7 @@ class TetGenP1(UnStructuredTetMesh):
 
 
 class TetGenP2(P2UnstructuredTetMesh):
-    def __init__(
-        self, origin=np.zeros(3), nsteps=np.ones(3) * 10, step_vector=np.ones(3)
-    ):
+    def __init__(self, origin=np.zeros(3), nsteps=np.ones(3) * 10, step_vector=np.ones(3)):
         self.origin = origin
         self.nsteps = nsteps
         self.step_vector = step_vector
@@ -41,13 +37,9 @@ import LoopStructural
 from LoopStructural.interpolators import InterpolatorType
 
 LoopStructural.interpolators.supports.support_map[
-    LoopStructural.interpolators.support_interpolator_map[
-        InterpolatorType.PIECEWISE_QUADRATIC
-    ]
+    LoopStructural.interpolators.support_interpolator_map[InterpolatorType.PIECEWISE_QUADRATIC]
 ] = TetGenP2
 
 LoopStructural.interpolators.supports.support_map[
-    LoopStructural.interpolators.support_interpolator_map[
-        InterpolatorType.PIECEWISE_LINEAR
-    ]
+    LoopStructural.interpolators.support_interpolator_map[InterpolatorType.PIECEWISE_LINEAR]
 ] = TetGenP1
